@@ -22,9 +22,10 @@ const memo = () => {
         <div class="post-content">
         ${item.content}
         </div>`;
-      list.insertAdjacentElement("afterend", HTML);
+      list.insertAdjacentHTML("afterend", HTML);
       formText.value = "";
     };
+    e.preventDefault();
   });
 }
 
