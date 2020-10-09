@@ -6,8 +6,8 @@ class PostsController < ApplicationController
 
  
   def create
-    Post.create(post_params)
-    redirect_to action: :index
+    post = Post.create(post_params, cheked: false)
+    render json:{ post: post }
   end
 
   def checked
@@ -25,6 +25,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content,)
   end
 end
